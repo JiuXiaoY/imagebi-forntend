@@ -23,9 +23,39 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseInterfaceInfo = {
+    code?: number;
+    data?: InterfaceInfo;
+    message?: string;
+  };
+
   type BaseResponseListChartMessageQueryResponse = {
     code?: number;
     data?: ChartMessageQueryResponse[];
+    message?: string;
+  };
+
+  type BaseResponseListInterfaceInfo = {
+    code?: number;
+    data?: InterfaceInfo[];
+    message?: string;
+  };
+
+  type BaseResponseListInterfaceInfoVO = {
+    code?: number;
+    data?: InterfaceInfoVO[];
+    message?: string;
+  };
+
+  type BaseResponseListOrderInfo = {
+    code?: number;
+    data?: OrderInfo[];
+    message?: string;
+  };
+
+  type BaseResponseListUserInterfaceInfo = {
+    code?: number;
+    data?: UserInterfaceInfo[];
     message?: string;
   };
 
@@ -41,9 +71,27 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseOrderInfo = {
+    code?: number;
+    data?: OrderInfo;
+    message?: string;
+  };
+
   type BaseResponsePageChart = {
     code?: number;
     data?: PageChart;
+    message?: string;
+  };
+
+  type BaseResponsePageInterfaceInfo = {
+    code?: number;
+    data?: PageInterfaceInfo;
+    message?: string;
+  };
+
+  type BaseResponsePageOrderInfo = {
+    code?: number;
+    data?: PageOrderInfo;
     message?: string;
   };
 
@@ -56,6 +104,12 @@ declare namespace API {
   type BaseResponsePageUser = {
     code?: number;
     data?: PageUser;
+    message?: string;
+  };
+
+  type BaseResponsePageUserInterfaceInfo = {
+    code?: number;
+    data?: PageUserInterfaceInfo;
     message?: string;
   };
 
@@ -80,6 +134,12 @@ declare namespace API {
   type BaseResponseUser = {
     code?: number;
     data?: User;
+    message?: string;
+  };
+
+  type BaseResponseUserInterfaceInfo = {
+    code?: number;
+    data?: UserInterfaceInfo;
     message?: string;
   };
 
@@ -174,6 +234,10 @@ declare namespace API {
     setOrExpired?: boolean;
   };
 
+  type DeleteBatchRequest = {
+    ids?: number[];
+  };
+
   type DeleteRequest = {
     id?: number;
   };
@@ -219,6 +283,16 @@ declare namespace API {
     id?: number;
   };
 
+  type getInterfaceInfoByIdUsingGETParams = {
+    /** id */
+    id?: number;
+  };
+
+  type getOrderInfoByIdUsingGETParams = {
+    /** id */
+    id?: number;
+  };
+
   type getPostVOByIdUsingGETParams = {
     /** id */
     id?: number;
@@ -234,9 +308,177 @@ declare namespace API {
     id?: number;
   };
 
+  type getUserInterfaceInfoByIdsUsingGETParams = {
+    /** interfaceInfoId */
+    interfaceInfoId?: number;
+    /** userId */
+    userId?: number;
+  };
+
+  type getUserInterfaceInfoByIdUsingGETParams = {
+    /** id */
+    id?: number;
+  };
+
   type getUserVOByIdUsingGETParams = {
     /** id */
     id?: number;
+  };
+
+  type IdRequest = {
+    id?: number;
+  };
+
+  type InterfaceInfo = {
+    create_time?: string;
+    description?: string;
+    id?: number;
+    isDeleted?: number;
+    method?: string;
+    name?: string;
+    requestHeader?: string;
+    requestParams?: string;
+    responseHeader?: string;
+    status?: number;
+    update_time?: string;
+    url?: string;
+    userid?: number;
+  };
+
+  type InterfaceInfoAddRequest = {
+    description?: string;
+    method?: string;
+    name?: string;
+    requestHeader?: string;
+    requestParams?: string;
+    responseHeader?: string;
+    url?: string;
+  };
+
+  type InterfaceInfoInvokeRequest = {
+    id?: number;
+    requestParams?: string;
+  };
+
+  type InterfaceInfoUpdateRequest = {
+    description?: string;
+    id?: number;
+    method?: string;
+    name?: string;
+    requestHeader?: string;
+    requestParams?: string;
+    responseHeader?: string;
+    status?: number;
+    url?: string;
+  };
+
+  type InterfaceInfoVO = {
+    create_time?: string;
+    description?: string;
+    id?: number;
+    isDeleted?: number;
+    method?: string;
+    name?: string;
+    requestHeader?: string;
+    requestParams?: string;
+    responseHeader?: string;
+    status?: number;
+    totalNum?: number;
+    update_time?: string;
+    url?: string;
+    userid?: number;
+  };
+
+  type listInterfaceInfoByPageUsingGETParams = {
+    current?: number;
+    description?: string;
+    id?: number;
+    method?: string;
+    name?: string;
+    pageSize?: number;
+    requestHeader?: string;
+    responseHeader?: string;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    url?: string;
+    userid?: number;
+  };
+
+  type listInterfaceInfoUsingGETParams = {
+    current?: number;
+    description?: string;
+    id?: number;
+    method?: string;
+    name?: string;
+    pageSize?: number;
+    requestHeader?: string;
+    responseHeader?: string;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    url?: string;
+    userid?: number;
+  };
+
+  type listOrderInfoByPageUsingGETParams = {
+    amountPaid?: number;
+    current?: number;
+    id?: number;
+    interfaceInfoId?: number;
+    pageSize?: number;
+    paymentMethod?: string;
+    purchasesCount?: number;
+    serialNumber?: string;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    userId?: number;
+  };
+
+  type listOrderInfoByUserIdUsingGETParams = {
+    id?: number;
+  };
+
+  type listOrderInfoUsingGETParams = {
+    amountPaid?: number;
+    current?: number;
+    id?: number;
+    interfaceInfoId?: number;
+    pageSize?: number;
+    paymentMethod?: string;
+    purchasesCount?: number;
+    serialNumber?: string;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    userId?: number;
+  };
+
+  type listUserInterfaceInfoByPageUsingGETParams = {
+    current?: number;
+    id?: number;
+    interfaceInfoId?: number;
+    leftNum?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    totalNum?: number;
+    userId?: number;
+  };
+
+  type listUserInterfaceInfoUsingGETParams = {
+    current?: number;
+    id?: number;
+    interfaceInfoId?: number;
+    leftNum?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    totalNum?: number;
+    userId?: number;
   };
 
   type LoginUserVO = {
@@ -247,6 +489,35 @@ declare namespace API {
     userName?: string;
     userProfile?: string;
     userRole?: string;
+  };
+
+  type OrderInfo = {
+    amountPaid?: number;
+    create_time?: string;
+    id?: number;
+    interfaceInfoId?: number;
+    isDeleted?: number;
+    paymentMethod?: string;
+    purchasesCount?: number;
+    serialNumber?: string;
+    status?: number;
+    update_time?: string;
+    userId?: number;
+  };
+
+  type OrderInfoAddRequest = {
+    interfaceInfoId?: number;
+    originalUrl?: string;
+    purchasesCount?: number;
+    userId?: number;
+  };
+
+  type OrderInfoUpdateRequest = {
+    amountPaid?: number;
+    id?: number;
+    paymentMethod?: string;
+    purchasesCount?: number;
+    status?: number;
   };
 
   type OrderItem = {
@@ -262,6 +533,32 @@ declare namespace API {
     orders?: OrderItem[];
     pages?: number;
     records?: Chart[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageInterfaceInfo = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: InterfaceInfo[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageOrderInfo = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: OrderInfo[];
     searchCount?: boolean;
     size?: number;
     total?: number;
@@ -288,6 +585,19 @@ declare namespace API {
     orders?: OrderItem[];
     pages?: number;
     records?: User[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageUserInterfaceInfo = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: UserInterfaceInfo[];
     searchCount?: boolean;
     size?: number;
     total?: number;
@@ -384,9 +694,12 @@ declare namespace API {
   };
 
   type User = {
+    accessKey?: string;
     createTime?: string;
+    gender?: number;
     id?: number;
     isDelete?: number;
+    secretKey?: string;
     updateTime?: string;
     userAccount?: string;
     userAvatar?: string;
@@ -400,6 +713,32 @@ declare namespace API {
     userAvatar?: string;
     userName?: string;
     userRole?: string;
+  };
+
+  type UserInterfaceInfo = {
+    create_time?: string;
+    id?: number;
+    interfaceInfoId?: number;
+    isDeleted?: number;
+    leftNum?: number;
+    status?: number;
+    totalNum?: number;
+    update_time?: string;
+    userId?: number;
+  };
+
+  type UserInterfaceInfoAddRequest = {
+    id?: number;
+    interfaceInfoId?: number;
+    totalNum?: number;
+    userId?: number;
+  };
+
+  type UserInterfaceInfoUpdateRequest = {
+    id?: number;
+    leftNum?: number;
+    status?: number;
+    totalNum?: number;
   };
 
   type UserLoginRequest = {

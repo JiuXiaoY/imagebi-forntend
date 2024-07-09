@@ -129,7 +129,7 @@ export default defineConfig({
   openAPI: [
     {
       requestLibPath: "import { request } from '@umijs/max'",
-      schemaPath: 'http://localhost:7101/bi/v3/api-docs',
+      schemaPath: 'http://localhost:8399/api/v3/api-docs',
       projectName: 'imagebi-backend',
     },
   ],

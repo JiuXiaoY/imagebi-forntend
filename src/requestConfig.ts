@@ -16,7 +16,7 @@ interface ResponseStructure {
  */
 
 export const requestConfig: RequestConfig = {
-  baseURL: 'http://localhost:7101',
+  baseURL: 'http://localhost:8399',
   withCredentials: true,
   // 请求拦截器
   requestInterceptors: [

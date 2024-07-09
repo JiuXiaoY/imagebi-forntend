@@ -2,9 +2,9 @@
 /* eslint-disable */
 import { request } from '@umijs/max';
 
-/** addPost POST /bi/post/add */
+/** addPost POST /api/post/add */
 export async function addPostUsingPost(body: API.PostAddRequest, options?: { [key: string]: any }) {
-  return request<API.BaseResponselong>('/bi/post/add', {
+  return request<API.BaseResponselong>('/api/post/add', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,12 +14,12 @@ export async function addPostUsingPost(body: API.PostAddRequest, options?: { [ke
   });
 }
 
-/** deletePost POST /bi/post/delete */
+/** deletePost POST /api/post/delete */
 export async function deletePostUsingPost(
   body: API.DeleteRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseboolean>('/bi/post/delete', {
+  return request<API.BaseResponseboolean>('/api/post/delete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,12 +29,12 @@ export async function deletePostUsingPost(
   });
 }
 
-/** editPost POST /bi/post/edit */
+/** editPost POST /api/post/edit */
 export async function editPostUsingPost(
   body: API.PostEditRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseboolean>('/bi/post/edit', {
+  return request<API.BaseResponseboolean>('/api/post/edit', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -44,13 +44,13 @@ export async function editPostUsingPost(
   });
 }
 
-/** getPostVOById GET /bi/post/get/vo */
+/** getPostVOById GET /api/post/get/vo */
 export async function getPostVoByIdUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
   params: API.getPostVOByIdUsingGETParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePostVO>('/bi/post/get/vo', {
+  return request<API.BaseResponsePostVO>('/api/post/get/vo', {
     method: 'GET',
     params: {
       ...params,
@@ -59,12 +59,12 @@ export async function getPostVoByIdUsingGet(
   });
 }
 
-/** listPostVOByPage POST /bi/post/list/page/vo */
+/** listPostVOByPage POST /api/post/list/page/vo */
 export async function listPostVoByPageUsingPost(
   body: API.PostQueryRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePagePostVO>('/bi/post/list/page/vo', {
+  return request<API.BaseResponsePagePostVO>('/api/post/list/page/vo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -74,12 +74,12 @@ export async function listPostVoByPageUsingPost(
   });
 }
 
-/** listMyPostVOByPage POST /bi/post/my/list/page/vo */
+/** listMyPostVOByPage POST /api/post/my/list/page/vo */
 export async function listMyPostVoByPageUsingPost(
   body: API.PostQueryRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePagePostVO>('/bi/post/my/list/page/vo', {
+  return request<API.BaseResponsePagePostVO>('/api/post/my/list/page/vo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -89,12 +89,12 @@ export async function listMyPostVoByPageUsingPost(
   });
 }
 
-/** searchPostVOByPage POST /bi/post/search/page/vo */
+/** searchPostVOByPage POST /api/post/search/page/vo */
 export async function searchPostVoByPageUsingPost(
   body: API.PostQueryRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponsePagePostVO>('/bi/post/search/page/vo', {
+  return request<API.BaseResponsePagePostVO>('/api/post/search/page/vo', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -104,12 +104,12 @@ export async function searchPostVoByPageUsingPost(
   });
 }
 
-/** updatePost POST /bi/post/update */
+/** updatePost POST /api/post/update */
 export async function updatePostUsingPost(
   body: API.PostUpdateRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseboolean>('/bi/post/update', {
+  return request<API.BaseResponseboolean>('/api/post/update', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
