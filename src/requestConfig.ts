@@ -16,7 +16,7 @@ interface ResponseStructure {
  */
 
 export const requestConfig: RequestConfig = {
-  baseURL: 'https://imagebi-backend-113921-5-1327761048.sh.run.tcloudbase.com',
+  baseURL: 'https://apiandbi-hhh-113921-5-1327761048.sh.run.tcloudbase.com',
   withCredentials: true,
   // 请求拦截器
   requestInterceptors: [
