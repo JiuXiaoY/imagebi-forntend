@@ -16,7 +16,7 @@ interface ResponseStructure {
  */
 
 export const requestConfig: RequestConfig = {
-  baseURL: 'http://localhost:8399',
+  baseURL: 'https://imagebi-backend-113921-5-1327761048.sh.run.tcloudbase.com',
   withCredentials: true,
   // 请求拦截器
   requestInterceptors: [
